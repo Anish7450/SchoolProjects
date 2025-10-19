@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learn to Code — Mini Basic Course</title>
+  <link rel="stylesheet" href="learn_to_code_styles.css" />
+</head>
+<body>
+  <header class="htc-header">
+    <a class="back-btn" href="index.html" title="Back to main site">‹ Back</a>
+    <h1 class="title">How to Code — A short, brilliant journey</h1>
+    <nav class="top-nav" aria-hidden="true">
+      <button id="toc-toggle" class="toc-toggle" aria-expanded="false" title="Table of contents">☰</button>
+    </nav>
+    <div>
+        <img class="logo-placeholder" src="MyNameLogo.jpg" alt="Logo" />
+    </div>
+  </header>
+
+  <!-- Table of contents (collapsible) -->
+  <aside id="toc" class="toc" aria-hidden="true">
+    <ol>
+      <li><button data-index="0">1 — Why Code?</button></li>
+      <li><button data-index="1">2 — HTML (structure)</button></li>
+      <li><button data-index="2">3 — CSS (style)</button></li>
+      <li><button data-index="3">4 — JavaScript (behavior)</button></li>
+    </ol>
+  </aside>
+
+  <main class="carousel" id="carousel" aria-live="polite">
+    <!-- Slide: Why Code -->
+    <article class="slide" data-index="0" aria-hidden="false">
+      <div class="slide-inner color-a">
+        <div class="text">
+          <h2>Why learn coding?</h2>
+          <p class="lead">Code is a superpower — it turns ideas into things people can use. From websites to robots and art, code is the tool creators use to make change.</p>
+          <ul class="points">
+            <li><strong>Usefulness:</strong> Build tools, automate tasks, create games.</li>
+            <li><strong>Thinking:</strong> Coding trains clear logical thinking — a skill for life.</li>
+            <li><strong>Opportunity:</strong> Jobs, research, startups — doors open when you can build.</li>
+          </ul>
+          <p class="call">Think: what would you create if you could code? Keep that idea — we'll help you build it step by step.</p>
+        </div>
+        <figure class="media">
+          <img src="Why.jpg" alt="Illustration: ideas to reality" class="rounded" id="img-why" />
+        </figure>
+      </div>
+    </article>
+
+    <!-- Slide: HTML -->
+    <article class="slide" data-index="1" aria-hidden="true">
+      <div class="slide-inner color-b">
+        <div class="text">
+          <h2>HTML — structure & meaning</h2>
+          <p class="lead">HTML is the skeleton of a web page. It tells the browser what each piece of content *is*: a heading, a paragraph, a list, a link, an image.</p>
+          <pre class="code-sample" aria-hidden="true">&lt;h1&gt;Hello&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item A&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          <p class="tip">Try: open a plain text file, paste the snippet, save as <code>example.html</code>, and open it in your browser — that's instant magic.</p>
+        </div>
+        <figure class="media">
+          <img src="html.png" alt="Screenshot: code editor" class="rounded" id="img-html" />
+        </figure>
+      </div>
+    </article>
+
+    <!-- Slide: CSS -->
+    <article class="slide" data-index="2" aria-hidden="true">
+      <div class="slide-inner color-c">
+        <div class="text">
+          <h2>CSS — style and layout</h2>
+          <p class="lead">CSS makes HTML look beautiful. Colors, spacing, animations, and responsive layouts all come from CSS.</p>
+          <pre class="code-sample" aria-hidden="true">body { font-family: system-ui; background:#fff; color:#111; }
+h1 { color: #2b6cb0; }</pre>
+          <p class="tip">Play: add a <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code> to your HTML and change colors live.</p>
+        </div>
+        <figure class="media">
+          <img src="css.jpg" alt="Visual: styling examples" class="rounded" id="img-css" />
+        </figure>
+      </div>
+    </article>
+
+    <!-- Slide: JavaScript -->
+    <article class="slide" data-index="3" aria-hidden="true">
+      <div class="slide-inner color-d">
+        <div class="text">
+          <h2>JavaScript — behavior and logic</h2>
+          <p class="lead">JS lets pages respond: clicking buttons, fetching data, animating things — it's how you make sites interactive.</p>
+          <pre class="code-sample" aria-hidden="true">const btn = document.querySelector('button');
+btn.addEventListener('click', () =&gt; alert('Hello!'));</pre>
+          <p class="tip">Practice: add a script to your HTML, log something to the console, and watch the browser respond.</p>
+
+          <div class="motivate">
+            <strong>Final challenge:</strong> Pick one thing: make a small page that shows your name and changes color when clicked. Build it — you can do it.
+          </div>
+        </div>
+        <figure class="media">
+          <img src="js.gif" alt="Visual: interactive demo" class="rounded" id="img-js" />
+        </figure>
+      </div>
+    </article>
+  </main>
+
+  <!-- Controls -->
+  <nav class="controls" aria-label="Slide navigation">
+    <button id="prev" class="ctrl">‹ Prev</button>
+    <div class="progress" aria-hidden="true">
+      <span id="progress-text">1 / 4</span>
+      <div class="progress-bar" aria-hidden="true"><div id="progress-fill"></div></div>
+    </div>
+    <button id="next" class="ctrl">Next ›</button>
+  </nav>
+
+  <footer class="htc-footer">
+    <small>Made for learners.</small>
+  </footer>
+
+  <script src="how_to_code_script.js"></script>
+</body>
+</html>

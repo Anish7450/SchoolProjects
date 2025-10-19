@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anish Website School Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="MyNameLogo.jpg" alt="logo" aria-hidden="true" class="logo-placeholder" />
+      <div>
+        <h1 class="site-title">Anish Website</h1>
+        <p class="site-sub">School Project Showcase</p>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <button id="menu-button" class="dot-menu" aria-haspopup="true" aria-expanded="false" aria-controls="dot-menu-panel" title="Open menu">
+        <span class="dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="dot-menu-panel" class="dot-menu-panel" role="menu" aria-hidden="true">
+    <ul>
+      <li><button id="about-school" class="menu-item" data-action="about-school" role="menuitem">About School</button></li>
+      <li><button class="menu-item" data-action="about-me" id="about-myself" role="menuitem">About Me</button></li>
+      <li><button class="menu-item" data-action="learn-code" role="menuitem">Learn how to code</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h2 class="hero-title">Welcome to <span class="accent">Anish Website</span> — A Project Showcase</h2>
+        <p class="hero-sub">Clean, accessible, and crafted to impress. Explore projects, learn, and share.</p>
+        <div class="hero-ctas">
+          <a href="#features" class="btn primary">Explore Features</a>
+          <button id="open-learn" class="btn ghost">Learn to Code</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 200" class="hero-svg" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <rect x="8" y="14" width="120" height="120" rx="12" fill="#ffffff10"/>
+          <rect x="152" y="38" width="120" height="120" rx="12" fill="#ffffff08"/>
+          <circle cx="70" cy="150" r="24" fill="#ffffff06"/>
+        </svg>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h3 class="section-title">Features</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Polished Design</h4>
+          <p>Sleek layout with readable typography and responsive components suitable for a school presentation.</p>
+        </article>
+
+        <article class="card">
+          <h4>Accessible</h4>
+          <p>Keyboard navigable controls, ARIA roles, and readable contrast — built with inclusivity in mind.</p>
+        </article>
+
+        <article class="card">
+          <h4>Commenting</h4>
+          <p>This project also contains the feature to comment and save, to commment something, reach at the last of the webpage.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <h3 class="section-title">Other Projects</h3>
+      <div class="showcase-grid">
+        <figure class="spotlight">
+          <div class="spot-preview">1</div>
+          <figcaption>
+            <a href="https://anish7450.github.io/NewDesignedSmartStylishClock/"><strong>Digital Stylish Clock</strong>
+            <p>A digital stylish clock made using html, css and js. Used to measure time with style and fasion.</p></a>
+          </figcaption>
+        </figure>
+
+        <figure class="spotlight">
+          <div class="spot-preview">2</div>
+          <figcaption>
+            <a href="https://anish7450.github.io/SortPuzzleGsme/"><strong>Sort Puzzle Game</strong>
+            <p>A Game that applies js for interactions and needs brain to play.</p></a>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section class="contact">
+      <h3 class="section-title">Quick Contact</h3>
+      <form id="contact-form" class="contact-form" action="#" onsubmit="return false;">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="3" placeholder="Say hello..." required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Anish Website — Built for school projects. Crafted with care.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

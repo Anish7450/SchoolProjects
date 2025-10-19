@@ -1,0 +1,147 @@
+/* styles.css — HowToCode mini-course styles
+   Clean structure, four distinct palettes, slide transitions, rounded images.
+*/
+
+/* Layout vars */
+:root{
+  --bg: #0b1220;
+  --card-radius: 14px;
+  --gap: 18px;
+  --max-width: 1100px;
+  --text-muted: #cbd5e1;
+  --glass: rgba(255,255,255,0.03);
+  --shadow: 0 14px 40px rgba(2,6,23,0.7);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#e6eef8}
+a{color:inherit}
+code{background:#0f1724;padding:2px 6px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;font-size:90%;}
+
+/* Header */
+.htc-header{
+  max-width:var(--max-width);
+  margin:18px auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+}
+.back-btn{color:var(--text-muted); text-decoration:none; font-weight:700; margin-right:6px; opacity:0.95;top:18cm;position:relative}
+.title{flex:1;margin:0;font-size:18px}
+
+/* TOC */
+.toc{position:fixed; top:70px; right:20px; width:220px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:12px; border:1px solid rgba(255,255,255,0.04); box-shadow:var(--shadow); display:none; z-index:60;}
+.toc[aria-hidden="false"]{display:block}
+.toc ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc button{background:transparent;border:none;color:#e6eef8;text-align:left;padding:8px;border-radius:8px;cursor:pointer}
+.toc button:hover{background:rgba(255,255,255,0.02)}
+
+/* Carousel / slides */
+.carousel{max-width:var(--max-width);margin:18px auto;padding:20px;display:block;position:relative;overflow:hidden;border-radius:12px}
+.slide{min-height:420px;display:none;align-items:stretch;transition:transform .55s cubic-bezier(.22,.9,.28,1),opacity .45s ease;will-change:transform,opacity}
+.slide[aria-hidden="false"]{display:flex}
+.slide-inner{display:flex;gap:20px;align-items:center;padding:28px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow)}
+
+/* Two-column inside slide */
+.slide-inner .text{flex:1;min-width:300px}
+.slide-inner .media{width:320px;display:flex;flex-direction:column;align-items:center;gap:10px}
+
+/* Rounded image style */
+.rounded{width:100%;height:200px;object-fit:cover;border-radius:18px;border:6px solid rgba(255,255,255,0.03);box-shadow:0 8px 28px rgba(2,6,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01))}
+
+/* text styles */
+.lead{font-size:1.05rem;color:#f0f8ff;margin-top:6px}
+.points{margin:12px 0 6px 0;padding-left:18px;color:var(--text-muted)}
+.call{margin-top:12px;font-weight:700;color:#dbeafe}
+.tip{margin-top:10px;color:var(--text-muted);font-size:0.95rem}
+.motivate{margin-top:12px;background:rgba(0,0,0,0.25);padding:10px;border-radius:10px;color:#fff}
+
+/* code sample */
+.code-sample{background:#071126;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);color:#cfe9ff;overflow:auto;margin-top:14px}
+
+/* Controls */
+.controls{max-width:var(--max-width);margin:18px auto;display:flex;align-items:center;gap:12px;justify-content:space-between;padding:0 12px}
+.ctrl{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
+.ctrl:active{transform:translateY(1px)}
+.progress{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+#progress-text{font-size:13px;color:var(--text-muted)}
+.progress-bar{width:100%;height:8px;background:rgba(255,255,255,0.03);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+#progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#7dd3fc,#34d399);transition:width .45s cubic-bezier(.2,.9,.3,1)}
+
+/* footer */
+.htc-footer{max-width:var(--max-width);margin:6px auto;color:var(--text-muted);padding:12px;text-align:center}
+
+/* Color palettes per slide */
+.color-a{background:linear-gradient(180deg,#071018, #08202b)}
+.color-b{background:linear-gradient(180deg,#081023,#13293b)}
+.color-c{background:linear-gradient(180deg,#101214,#19232a)}
+.color-d{background:linear-gradient(180deg,#0b1b12,#153124)}
+
+/* Enter/leave animations (slide from right/left + fade) */
+.slide-enter-right { transform: translateX(36px); opacity:0 }
+.slide-enter-left  { transform: translateX(-36px); opacity:0 }
+.slide-enter-active { transform: translateX(0); opacity:1; transition: transform .55s cubic-bezier(.22,.9,.28,1), opacity .4s ease }
+.slide-exit-right  { transform: translateX(-36px); opacity:0; transition: transform .45s ease, opacity .3s ease }
+.slide-exit-left   { transform: translateX(36px); opacity:0; transition: transform .45s ease, opacity .3s ease }
+
+/* Responsive */
+@media (max-width:900px){
+  .slide-inner{flex-direction:column}
+  .media{width:100%}
+  .rounded{height:160px}
+  .controls{flex-direction:column;gap:10px}
+}
+
+/* Small helper */
+.hidden{display:none}
+
+/* three dots button */
+.dot-menu {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:var(--muted);
+}
+.dot-menu:focus { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.dots { display:inline-grid; gap:6px; grid-auto-flow:column; }
+.dots span { display:block; width:6px; height:6px; border-radius:50%; background:var(--muted); opacity:0.95; }
+.dot-menu:hover .dots span { transform: translateY(-2px); transition: transform .25s ease; }
+
+/* popup menu panel */
+.dot-menu-panel {
+  position: absolute;
+  top: 68px;
+  right: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  padding: 8px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+  display:none;
+  z-index: 120;
+}
+.dot-menu-panel[aria-hidden="false"] { display:block; animation: popIn .18s ease; }
+.dot-menu-panel ul { list-style:none; margin:0; padding:6px; }
+.dot-menu-panel .menu-item {
+  width:100%;
+  text-align:left;
+  padding:10px 12px;
+  border-radius:8px;
+  background:transparent;
+  border: none;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.dot-menu-panel .menu-item:hover, .dot-menu-panel .menu-item:focus { background: rgba(255,255,255,0.03); outline: none; }
+
+.logo-placeholder{ position:absolute; height:1.3cm; width:1.3cm;left:5px;top:21px;border-radius:10px;}
